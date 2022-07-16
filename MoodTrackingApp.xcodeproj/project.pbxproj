@@ -13,6 +13,12 @@
 		C2405F48287D71A900DDAE46 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2405F46287D71A900DDAE46 /* Main.storyboard */; };
 		C2405F4A287D71AD00DDAE46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2405F49287D71AD00DDAE46 /* Assets.xcassets */; };
 		C2405F4D287D71AD00DDAE46 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2405F4B287D71AD00DDAE46 /* LaunchScreen.storyboard */; };
+		C2405F55287D7A0F00DDAE46 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2405F54287D7A0F00DDAE46 /* CalendarCell.swift */; };
+		C2405F57287DC66500DDAE46 /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2405F56287DC66500DDAE46 /* CalendarHelper.swift */; };
+		C2AC0F7B2882CC1A0013EEE7 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC0F7A2882CC1A0013EEE7 /* NoteViewController.swift */; };
+		C2AC0F7D2882CC5F0013EEE7 /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC0F7C2882CC5F0013EEE7 /* EntryViewController.swift */; };
+		C2AC0F7F2882CCA10013EEE7 /* journalHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC0F7E2882CCA10013EEE7 /* journalHelper.swift */; };
+		C2E501D9287EC5B000FF9886 /* EmotionHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E501D8287EC5B000FF9886 /* EmotionHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		C2405F49287D71AD00DDAE46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2405F4C287D71AD00DDAE46 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2405F4E287D71AD00DDAE46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2405F54287D7A0F00DDAE46 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		C2405F56287DC66500DDAE46 /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		C2AC0F7A2882CC1A0013EEE7 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		C2AC0F7C2882CC5F0013EEE7 /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
+		C2AC0F7E2882CCA10013EEE7 /* journalHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = journalHelper.swift; sourceTree = "<group>"; };
+		C2E501D8287EC5B000FF9886 /* EmotionHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +69,15 @@
 			isa = PBXGroup;
 			children = (
 				C2405F40287D71A900DDAE46 /* AppDelegate.swift */,
+				C2AC0F7A2882CC1A0013EEE7 /* NoteViewController.swift */,
 				C2405F42287D71A900DDAE46 /* SceneDelegate.swift */,
 				C2405F44287D71A900DDAE46 /* ViewController.swift */,
+				C2AC0F7E2882CCA10013EEE7 /* journalHelper.swift */,
+				C2405F56287DC66500DDAE46 /* CalendarHelper.swift */,
+				C2E501D8287EC5B000FF9886 /* EmotionHelper.swift */,
 				C2405F46287D71A900DDAE46 /* Main.storyboard */,
+				C2AC0F7C2882CC5F0013EEE7 /* EntryViewController.swift */,
+				C2405F54287D7A0F00DDAE46 /* CalendarCell.swift */,
 				C2405F49287D71AD00DDAE46 /* Assets.xcassets */,
 				C2405F4B287D71AD00DDAE46 /* LaunchScreen.storyboard */,
 				C2405F4E287D71AD00DDAE46 /* Info.plist */,
@@ -138,9 +156,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2405F57287DC66500DDAE46 /* CalendarHelper.swift in Sources */,
 				C2405F45287D71A900DDAE46 /* ViewController.swift in Sources */,
 				C2405F41287D71A900DDAE46 /* AppDelegate.swift in Sources */,
 				C2405F43287D71A900DDAE46 /* SceneDelegate.swift in Sources */,
+				C2AC0F7B2882CC1A0013EEE7 /* NoteViewController.swift in Sources */,
+				C2AC0F7D2882CC5F0013EEE7 /* EntryViewController.swift in Sources */,
+				C2E501D9287EC5B000FF9886 /* EmotionHelper.swift in Sources */,
+				C2405F55287D7A0F00DDAE46 /* CalendarCell.swift in Sources */,
+				C2AC0F7F2882CCA10013EEE7 /* journalHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +319,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +348,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
