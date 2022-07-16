@@ -52,7 +52,14 @@ extension journalHelper: UITableViewDelegate{
         let vc = storyboard?.instantiateViewController(identifier: "note") as! NoteViewController
         vc.noteTitle = models[indexPath.row].title
         vc.note = models[indexPath.row].note
+        vc.current = indexPath.row
+        vc.update = {
+            DispatchQueue.main.async{
+                self.updateNotes()
+            }
+        }
         navigationController?.pushViewController(vc, animated: true)
+
     }
 }
 extension journalHelper: UITableViewDataSource{
