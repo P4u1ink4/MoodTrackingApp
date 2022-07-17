@@ -62,6 +62,10 @@ class ViewController: UIViewController{
         selectedDate = CalendarHelper().plusMonth(date: selectedDate)
         setMonthView()
     }
+    @IBAction func returnButton(_ sender: Any){
+        selectedDate = Date()
+        setMonthView()
+    }
     
     
     func setCellsView()
