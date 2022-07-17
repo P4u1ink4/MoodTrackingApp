@@ -167,23 +167,23 @@ extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "calCell", for: indexPath) as! CalendarCell
         cell.dayOfMonth.text = totalSquares[indexPath.item]
+        cell.circle.tintColor = UIColor.clear
+        cell.dayOfMonth.textColor = UIColor.black
         
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        var backgroundConfig = UIBackgroundConfiguration.listGroupedCell()
         if(indexPath.item-startingSpaces>=0){
             let emotion = moods[indexPath.item-startingSpaces]
-            if(emotion == "clear"){ backgroundConfig.backgroundColor = UIColor.clear}
-            if(emotion == "podekscytowana"){ backgroundConfig.backgroundColor = UIColor.yellow}
-            if(emotion == "zadowolona"){ backgroundConfig.backgroundColor = UIColor.systemGreen}
-            if(emotion == "rozbawiona"){ backgroundConfig.backgroundColor = UIColor.systemPurple}
-            if(emotion == "pogodna"){ backgroundConfig.backgroundColor = UIColor.magenta}
-            if(emotion == "obojetna"){ backgroundConfig.backgroundColor = UIColor.lightGray}
-            if(emotion == "rozczarowana"){backgroundConfig.backgroundColor = UIColor.systemIndigo}
-            if(emotion == "zmeczona"){ backgroundConfig.backgroundColor = UIColor.systemOrange}
-            if(emotion == "wsciekla"){ backgroundConfig.backgroundColor = UIColor.systemRed}
-            if(emotion == "smutna"){ backgroundConfig.backgroundColor = UIColor.systemBlue}
-            cell.backgroundConfiguration = backgroundConfig
+            if(emotion == "clear"){ cell.circle.tintColor = UIColor.clear}
+            if(emotion == "podekscytowana"){ cell.circle.tintColor = UIColor.systemYellow; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "zadowolona"){ cell.circle.tintColor = UIColor.systemGreen; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "rozbawiona"){ cell.circle.tintColor = UIColor.systemPurple; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "pogodna"){ cell.circle.tintColor = UIColor.magenta; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "obojetna"){ cell.circle.tintColor = UIColor.lightGray; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "rozczarowana"){ cell.circle.tintColor = UIColor.systemIndigo; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "zmeczona"){ cell.circle.tintColor = UIColor.systemOrange; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "wsciekla"){ cell.circle.tintColor = UIColor.systemRed; cell.dayOfMonth.textColor = UIColor.white }
+            if(emotion == "smutna"){ cell.circle.tintColor = UIColor.systemBlue; cell.dayOfMonth.textColor = UIColor.white }
         }
         return cell
     }

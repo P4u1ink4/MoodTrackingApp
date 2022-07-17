@@ -85,16 +85,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QoH-Nw-M5D">
+                                                    <rect key="frame" x="-1" y="-1.5" width="53" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.4954075872" green="0.76942896839999997" blue="0.40537373659999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AH2-uh-eDa">
-                                                    <rect key="frame" x="20" y="0.5" width="10" height="24"/>
+                                                    <rect key="frame" x="20" y="6" width="10" height="24"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="AH2-uh-eDa" secondAttribute="bottom" constant="20" id="74I-mI-77g"/>
                                                 <constraint firstItem="AH2-uh-eDa" firstAttribute="centerY" secondItem="ln7-AJ-8gK" secondAttribute="centerY" multiplier="0.5" id="ETd-8T-d2m"/>
                                                 <constraint firstItem="AH2-uh-eDa" firstAttribute="centerX" secondItem="ln7-AJ-8gK" secondAttribute="centerX" id="cOd-xu-8Ue"/>
+                                                <constraint firstItem="AH2-uh-eDa" firstAttribute="top" secondItem="ln7-AJ-8gK" secondAttribute="top" constant="6" id="hae-xp-qU6"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="50" height="50"/>
@@ -102,6 +109,7 @@
                                             <nil key="backgroundColor"/>
                                         </variation>
                                         <connections>
+                                            <outlet property="circle" destination="QoH-Nw-M5D" id="cPj-8N-vst"/>
                                             <outlet property="dayOfMonth" destination="AH2-uh-eDa" id="Lg9-0a-aQN"/>
                                         </connections>
                                     </collectionViewCell>
@@ -166,7 +174,7 @@
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5xn-NQ-xNd">
                                                         <rect key="frame" x="0.0" y="0.5" width="20" height="17.5"/>
-                                                        <color key="tintColor" red="0.96841138599999999" green="0.88534333340000004" blue="0.18539751830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="podekscytowana" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AZr-4d-j8j">
                                                         <rect key="frame" x="20" y="0.0" width="93.5" height="18.5"/>
@@ -621,107 +629,188 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cxd-4p-3Pt">
-                                <rect key="frame" x="148" y="205" width="154.5" height="439"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cxd-4p-3Pt">
+                                <rect key="frame" x="130.5" y="228.5" width="153" height="439"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJb-Zl-eog">
-                                        <rect key="frame" x="0.0" y="0.0" width="122.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="zadowolona">
-                                            <color key="baseForegroundColor" systemColor="systemGreenColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="zadowolona" destination="iUF-b7-vMB" eventType="touchUpInside" id="HlA-oY-dxU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59h-Vw-6qx">
-                                        <rect key="frame" x="0.0" y="51" width="154.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="podekscytowana">
-                                            <color key="baseForegroundColor" red="0.96841138599999999" green="0.88534333340000004" blue="0.18539751830000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="podekscytowana" destination="iUF-b7-vMB" eventType="touchUpInside" id="KAq-Rh-NFH"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-zw-Or8">
-                                        <rect key="frame" x="0.0" y="102" width="103" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="pogodna">
-                                            <color key="baseForegroundColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="pogodna" destination="iUF-b7-vMB" eventType="touchUpInside" id="IKs-RM-Ad9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Em-eo-fBb">
-                                        <rect key="frame" x="0.0" y="153" width="119.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="rozbawiona">
-                                            <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="rozbawiona" destination="iUF-b7-vMB" eventType="touchUpInside" id="hyN-aU-OKT"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugN-WM-mQk">
-                                        <rect key="frame" x="0.0" y="204" width="104" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="obojętna">
-                                            <color key="baseForegroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="obojetna" destination="iUF-b7-vMB" eventType="touchUpInside" id="SqD-6y-O82"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSq-x6-Dff">
-                                        <rect key="frame" x="0.0" y="255" width="113.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="zmęczona">
-                                            <color key="baseForegroundColor" red="0.86078917980000003" green="0.60955285169999995" blue="0.29430007609999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="zmeczona" destination="iUF-b7-vMB" eventType="touchUpInside" id="Xp5-nN-APx"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42n-gv-85r">
-                                        <rect key="frame" x="0.0" y="306" width="135" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="rozczarowana">
-                                            <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="rozczarowana" destination="iUF-b7-vMB" eventType="touchUpInside" id="xzg-7Y-Djg"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvE-eN-hgw">
-                                        <rect key="frame" x="0.0" y="357" width="93.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="smutna">
-                                            <color key="baseForegroundColor" systemColor="systemBlueColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="smutna" destination="iUF-b7-vMB" eventType="touchUpInside" id="wBZ-II-ex7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ag-ZJ8">
-                                        <rect key="frame" x="0.0" y="408" width="101.5" height="31"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="squareshape.fill" catalog="system" title="wściekła">
-                                            <color key="baseForegroundColor" systemColor="systemRedColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="wsciekla" destination="iUF-b7-vMB" eventType="touchUpInside" id="PSN-NI-M27"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0kS-QV-L9s">
+                                        <rect key="frame" x="0.0" y="0.0" width="121" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9su-pM-O48">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemGreenColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IJb-Zl-eog">
+                                                <rect key="frame" x="20" y="0.0" width="101" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="zadowolona">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="zadowolona" destination="iUF-b7-vMB" eventType="touchUpInside" id="HlA-oY-dxU"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eXT-ic-4f4">
+                                        <rect key="frame" x="0.0" y="51" width="153" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="upH-7P-LAd">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemYellowColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59h-Vw-6qx">
+                                                <rect key="frame" x="20" y="0.0" width="133" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="podekscytowana">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="podekscytowana" destination="iUF-b7-vMB" eventType="touchUpInside" id="KAq-Rh-NFH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NVf-Zf-cfi">
+                                        <rect key="frame" x="0.0" y="102" width="101.5" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VaC-MK-Qhb">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kx0-zw-Or8">
+                                                <rect key="frame" x="20" y="0.0" width="81.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="pogodna">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="pogodna" destination="iUF-b7-vMB" eventType="touchUpInside" id="IKs-RM-Ad9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GkO-pQ-7Ks">
+                                        <rect key="frame" x="0.0" y="153" width="118" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="NsE-7T-OG6">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Em-eo-fBb">
+                                                <rect key="frame" x="20" y="0.0" width="98" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="rozbawiona">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="rozbawiona" destination="iUF-b7-vMB" eventType="touchUpInside" id="hyN-aU-OKT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IXh-sp-qf7">
+                                        <rect key="frame" x="0.0" y="204" width="100.5" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="A7d-ue-PeA">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugN-WM-mQk">
+                                                <rect key="frame" x="20" y="0.0" width="80.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="obojętna">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="obojetna" destination="iUF-b7-vMB" eventType="touchUpInside" id="SqD-6y-O82"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Urt-Ca-SXq">
+                                        <rect key="frame" x="0.0" y="255" width="110" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7K2-TX-12K">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSq-x6-Dff">
+                                                <rect key="frame" x="20" y="0.0" width="90" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="zmęczona">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="zmeczona" destination="iUF-b7-vMB" eventType="touchUpInside" id="Xp5-nN-APx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdU-li-wxd">
+                                        <rect key="frame" x="0.0" y="306" width="133.5" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Fen-dU-NvD">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemIndigoColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42n-gv-85r">
+                                                <rect key="frame" x="20" y="0.0" width="113.5" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="rozczarowana">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="rozczarowana" destination="iUF-b7-vMB" eventType="touchUpInside" id="xzg-7Y-Djg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDs-Dn-ToP">
+                                        <rect key="frame" x="0.0" y="357" width="92" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="y56-yf-qML">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" systemColor="systemBlueColor"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvE-eN-hgw">
+                                                <rect key="frame" x="20" y="0.0" width="72" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="smutna">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="smutna" destination="iUF-b7-vMB" eventType="touchUpInside" id="wBZ-II-ex7"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E1P-vu-1qV">
+                                        <rect key="frame" x="0.0" y="408" width="100" height="31"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yhz-tc-oxw">
+                                                <rect key="frame" x="0.0" y="0.5" width="20" height="30"/>
+                                                <color key="tintColor" red="0.92128556969999997" green="0.23179473" blue="0.22395211079999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M69-Ag-ZJ8">
+                                                <rect key="frame" x="20" y="0.0" width="80" height="31"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="wściekła">
+                                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="wsciekla" destination="iUF-b7-vMB" eventType="touchUpInside" id="PSN-NI-M27"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="NCO-5i-syi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cxd-4p-3Pt" firstAttribute="centerY" secondItem="NCO-5i-syi" secondAttribute="centerY" id="OlZ-hW-Z1q"/>
-                            <constraint firstItem="cxd-4p-3Pt" firstAttribute="centerX" secondItem="NCO-5i-syi" secondAttribute="centerX" id="hhE-7s-caa"/>
+                            <constraint firstItem="cxd-4p-3Pt" firstAttribute="centerX" secondItem="kqR-ea-XX3" secondAttribute="centerX" id="Fbx-rz-3vg"/>
+                            <constraint firstItem="cxd-4p-3Pt" firstAttribute="centerY" secondItem="kqR-ea-XX3" secondAttribute="centerY" id="fNa-2G-XnS"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -768,7 +857,6 @@
     </scenes>
     <resources>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
-        <image name="squareshape.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -789,6 +877,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
