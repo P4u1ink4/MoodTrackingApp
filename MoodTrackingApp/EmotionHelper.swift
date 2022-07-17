@@ -5,59 +5,79 @@ class EmotionHelper: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    var dayOfMonth = Calendar.current.dateComponents([.day], from: Date()).day
+    var dayNow = Calendar.current.dateComponents([.day], from: Date()).day
+    var monthNow = Calendar.current.dateComponents([.month], from: Date()).month
+    var yearNow = Calendar.current.dateComponents([.year], from: Date()).year
     @IBAction func radosna(){
-        if let day = dayOfMonth{
-            UserDefaults().set("radosna", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("radosna", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func zadowolona(){
-        if let day = dayOfMonth{
-            UserDefaults().set("zadowolona", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("zadowolona", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func rozbawiona(){
-        if let day = dayOfMonth{
-            UserDefaults().set("rozbawiona", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("rozbawiona", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func pogodna(){
-        if let day = dayOfMonth{
-            UserDefaults().set("pogodna", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("pogodna", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func obojetna(){
-        if let day = dayOfMonth{
-            UserDefaults().set("obojetna", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("obojetna", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func rozczarowana(){
-        if let day = dayOfMonth{
-            UserDefaults().set("rozczarowana", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("rozczarowana", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func zmeczona(){
-        if let day = dayOfMonth{
-            UserDefaults().set("zmeczona", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("zmeczona", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func wsciekla(){
-        if let day = dayOfMonth{
-            UserDefaults().set("wsciekla", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("wsciekla", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func smutna(){
-        if let day = dayOfMonth{
-            UserDefaults().set("smutna", forKey: "mood_\(day)")
-        }
+        guard let day = dayNow else { return }
+        guard let month = monthNow else { return }
+        guard let year = yearNow else { return }
+        let mood = [day, month, year]
+        UserDefaults().set("smutna", forKey: "mood_\(mood)")
         goback()
     }
 

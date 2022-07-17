@@ -12,13 +12,17 @@ class EntryViewController: UIViewController, UITextFieldDelegate, UITextViewDele
     @IBOutlet var titleField: UITextField!
     @IBOutlet var noteField: UITextView!
     
+    var selectedDate = Date()
+    
     var update: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         titleField.delegate = self
         noteField.delegate = self
-        titleField.becomeFirstResponder()
+        noteField.becomeFirstResponder()
+        titleField.text = CalendarHelper().dayString(date: selectedDate) + " " + CalendarHelper().monthString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
+        noteField.text = "Drogi pamiętniczku,\n"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Zapisz", style: .done, target: self, action: #selector(didTapSave))
     }
 

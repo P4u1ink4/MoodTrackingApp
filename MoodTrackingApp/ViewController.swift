@@ -44,23 +44,25 @@ class ViewController: UIViewController{
         }
         if !UserDefaults().bool(forKey: "setup") {
             UserDefaults().set(true, forKey: "setup")
-            UserDefaults().set(0, forKey: "day")
             UserDefaults().set(0, forKey: "count")
         }
-        if let day = dayOfMonth{
-            if day == 1{
-                for x in 1...31{
-                    //let domain = Bundle.main.bundleIdentifier!
-                    //UserDefaults.standard.removePersistentDomain(forName: domain)
-                    //UserDefaults.standard.synchronize()
-                    UserDefaults().removeObject(forKey: "mood_\(x)")
-                }
-            }
-        }
+//        let domain = Bundle.main.bundleIdentifier!
+//        UserDefaults.standard.removePersistentDomain(forName: domain)
+//        UserDefaults.standard.synchronize()
         
         setCellsView()
         setMonthView()
     }
+    
+    @IBAction func previousMonth(_ sender: Any){
+        selectedDate = CalendarHelper().minusMonth(date: selectedDate)
+        setMonthView()
+    }
+    @IBAction func nextMonth(_ sender: Any){
+        selectedDate = CalendarHelper().plusMonth(date: selectedDate)
+        setMonthView()
+    }
+    
     
     func setCellsView()
     {
@@ -78,6 +80,7 @@ class ViewController: UIViewController{
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
+        print(startingSpaces)
         
         var count: Int = 1
         var zadowolona: Int = 0
@@ -90,8 +93,17 @@ class ViewController: UIViewController{
         var smutna: Int = 0
         var wsciekla: Int = 0
         
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM"
+        let monthString = dateFormatter.string(from: selectedDate)
+        dateFormatter.dateFormat = "yyyy"
+        let yearString = dateFormatter.string(from: selectedDate)
+        
+        let month = Int(monthString) ?? 0
+        let year = Int(yearString) ?? 0
+        
         while(count <= 42){
-            if let mood = UserDefaults().value(forKey: "mood_\(count)") as? String {
+            if let mood = UserDefaults().value(forKey: "mood_\([count,month,year])") as? String {
                 moods.append(mood)
                 if(mood == "radosna"){radosna+=1}
                 if(mood == "zadowolona"){zadowolona+=1}
@@ -113,6 +125,7 @@ class ViewController: UIViewController{
             }
             count+=1
         }
+        moods.append("clear")
         monthLabel.text = CalendarHelper().monthString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
         radosnaLabel.text = String(radosna*100/daysInMonth) + "%"
         zadowolonaLabel.text = String(zadowolona*100/daysInMonth) + "%"
