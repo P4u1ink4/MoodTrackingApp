@@ -8,12 +8,12 @@ class EmotionHelper: UIViewController {
     var dayNow = Calendar.current.dateComponents([.day], from: Date()).day
     var monthNow = Calendar.current.dateComponents([.month], from: Date()).month
     var yearNow = Calendar.current.dateComponents([.year], from: Date()).year
-    @IBAction func radosna(){
+    @IBAction func podekscytowana(){
         guard let day = dayNow else { return }
         guard let month = monthNow else { return }
         guard let year = yearNow else { return }
         let mood = [day, month, year]
-        UserDefaults().set("radosna", forKey: "mood_\(mood)")
+        UserDefaults().set("podekscytowana", forKey: "mood_\(mood)")
         goback()
     }
     @IBAction func zadowolona(){

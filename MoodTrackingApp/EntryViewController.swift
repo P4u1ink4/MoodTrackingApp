@@ -22,7 +22,7 @@ class EntryViewController: UIViewController, UITextFieldDelegate, UITextViewDele
         noteField.delegate = self
         noteField.becomeFirstResponder()
         titleField.text = CalendarHelper().dayString(date: selectedDate) + " " + CalendarHelper().monthString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
-        noteField.text = "Drogi pamiętniczku,\n"
+        noteField.text = "Drogi pamiętniczku\n"
         navigationItem.rightBarButtonItem = UIBarButtonItem(title:"Zapisz", style: .done, target: self, action: #selector(didTapSave))
     }
 

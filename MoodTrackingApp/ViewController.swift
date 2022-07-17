@@ -7,7 +7,7 @@ class ViewController: UIViewController{
     @IBOutlet var collectionView: UICollectionView!
     
     @IBOutlet weak var zadowolonaLabel: UILabel!
-    @IBOutlet weak var radosnaLabel: UILabel!
+    @IBOutlet weak var podekscytowanaLabel: UILabel!
     @IBOutlet weak var pogodnaLabel: UILabel!
     @IBOutlet weak var rozbawionaLabel: UILabel!
     @IBOutlet weak var obojetnaLabel: UILabel!
@@ -80,11 +80,10 @@ class ViewController: UIViewController{
         let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        print(startingSpaces)
         
         var count: Int = 1
         var zadowolona: Int = 0
-        var radosna: Int = 0
+        var podekscytowana: Int = 0
         var pogodna: Int = 0
         var rozbawiona: Int = 0
         var obojetna: Int = 0
@@ -105,7 +104,7 @@ class ViewController: UIViewController{
         while(count <= 42){
             if let mood = UserDefaults().value(forKey: "mood_\([count,month,year])") as? String {
                 moods.append(mood)
-                if(mood == "radosna"){radosna+=1}
+                if(mood == "podekscytowana"){podekscytowana+=1}
                 if(mood == "zadowolona"){zadowolona+=1}
                 if(mood == "rozbawiona"){rozbawiona+=1}
                 if(mood == "pogodna"){pogodna+=1}
@@ -127,7 +126,7 @@ class ViewController: UIViewController{
         }
         moods.append("clear")
         monthLabel.text = CalendarHelper().monthString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
-        radosnaLabel.text = String(radosna*100/daysInMonth) + "%"
+        podekscytowanaLabel.text = String(podekscytowana*100/daysInMonth) + "%"
         zadowolonaLabel.text = String(zadowolona*100/daysInMonth) + "%"
         rozbawionaLabel.text = String(rozbawiona*100/daysInMonth) + "%"
         pogodnaLabel.text = String(pogodna*100/daysInMonth) + "%"
@@ -171,14 +170,14 @@ extension ViewController: UICollectionViewDataSource{
         if(indexPath.item-startingSpaces>=0){
             let emotion = moods[indexPath.item-startingSpaces]
             if(emotion == "clear"){ backgroundConfig.backgroundColor = UIColor.clear}
-            if(emotion == "radosna"){ backgroundConfig.backgroundColor = UIColor.yellow}
-            if(emotion == "zadowolona"){ backgroundConfig.backgroundColor = UIColor.green}
-            if(emotion == "rozbawiona"){ backgroundConfig.backgroundColor = UIColor.purple}
-            if(emotion == "pogodna"){ backgroundConfig.backgroundColor = UIColor.systemPink}
-            if(emotion == "obojetna"){ backgroundConfig.backgroundColor = UIColor.gray}
+            if(emotion == "podekscytowana"){ backgroundConfig.backgroundColor = UIColor.yellow}
+            if(emotion == "zadowolona"){ backgroundConfig.backgroundColor = UIColor.systemGreen}
+            if(emotion == "rozbawiona"){ backgroundConfig.backgroundColor = UIColor.systemPurple}
+            if(emotion == "pogodna"){ backgroundConfig.backgroundColor = UIColor.magenta}
+            if(emotion == "obojetna"){ backgroundConfig.backgroundColor = UIColor.lightGray}
             if(emotion == "rozczarowana"){backgroundConfig.backgroundColor = UIColor.systemIndigo}
-            if(emotion == "zmeczona"){ backgroundConfig.backgroundColor = UIColor.orange}
-            if(emotion == "wsciekla"){ backgroundConfig.backgroundColor = UIColor.red}
+            if(emotion == "zmeczona"){ backgroundConfig.backgroundColor = UIColor.systemOrange}
+            if(emotion == "wsciekla"){ backgroundConfig.backgroundColor = UIColor.systemRed}
             if(emotion == "smutna"){ backgroundConfig.backgroundColor = UIColor.systemBlue}
             cell.backgroundConfiguration = backgroundConfig
         }
