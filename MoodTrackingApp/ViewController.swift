@@ -172,9 +172,10 @@ extension ViewController: UICollectionViewDataSource{
         
         let firstDayOfMonth = CalendarHelper().firstOfMonth(date: selectedDate)
         let startingSpaces = CalendarHelper().weekDay(date: firstDayOfMonth)
-        if(indexPath.item-startingSpaces>=0){
+        let daysInMonth = CalendarHelper().daysInMonth(date: selectedDate)
+        if(indexPath.item-startingSpaces>=0 && indexPath.item-startingSpaces<daysInMonth){
             let emotion = moods[indexPath.item-startingSpaces]
-            if(emotion == "clear"){ cell.circle.tintColor = UIColor.clear}
+            if(emotion == "clear"){ cell.circle.tintColor = UIColor.white}
             if(emotion == "podekscytowana"){ cell.circle.tintColor = UIColor.systemYellow; cell.dayOfMonth.textColor = UIColor.white }
             if(emotion == "zadowolona"){ cell.circle.tintColor = UIColor.systemGreen; cell.dayOfMonth.textColor = UIColor.white }
             if(emotion == "rozbawiona"){ cell.circle.tintColor = UIColor.systemPurple; cell.dayOfMonth.textColor = UIColor.white }
