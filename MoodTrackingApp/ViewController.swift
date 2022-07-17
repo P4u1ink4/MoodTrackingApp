@@ -130,15 +130,15 @@ class ViewController: UIViewController{
         }
         moods.append("clear")
         monthLabel.text = CalendarHelper().monthString(date: selectedDate) + " " + CalendarHelper().yearString(date: selectedDate)
-        podekscytowanaLabel.text = String(podekscytowana*100/daysInMonth) + "%"
-        zadowolonaLabel.text = String(zadowolona*100/daysInMonth) + "%"
-        rozbawionaLabel.text = String(rozbawiona*100/daysInMonth) + "%"
-        pogodnaLabel.text = String(pogodna*100/daysInMonth) + "%"
-        obojetnaLabel.text = String(obojetna*100/daysInMonth) + "%"
-        rozczarowanaLabel.text = String(rozczarowana*100/daysInMonth) + "%"
-        zmeczonaLabel.text = String(zmeczona*100/daysInMonth) + "%"
-        wscieklaLabel.text = String(wsciekla*100/daysInMonth) + "%"
-        smutnaLabel.text = String(smutna*100/daysInMonth) + "%"
+        podekscytowanaLabel.text = " " + String(podekscytowana*100/daysInMonth) + "%  "
+        zadowolonaLabel.text = " " + String(zadowolona*100/daysInMonth) + "%  "
+        rozbawionaLabel.text = " " + String(rozbawiona*100/daysInMonth) + "%  "
+        pogodnaLabel.text = " " + String(pogodna*100/daysInMonth) + "%  "
+        obojetnaLabel.text = " " + String(obojetna*100/daysInMonth) + "%  "
+        rozczarowanaLabel.text = " " + String(rozczarowana*100/daysInMonth) + "%  "
+        zmeczonaLabel.text = " " + String(zmeczona*100/daysInMonth) + "%  "
+        wscieklaLabel.text = " " + String(wsciekla*100/daysInMonth) + "%  "
+        smutnaLabel.text = " " + String(smutna*100/daysInMonth) + "%  "
         collectionView.reloadData()
     }
     
