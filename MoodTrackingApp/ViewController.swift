@@ -20,28 +20,37 @@ class ViewController: UIViewController{
     var selectedDate = Date()
     var totalSquares = [String]()
     var dayOfMonth = Calendar.current.dateComponents([.day], from: Date()).day
+    var notf = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
-            if(!granted){
-                print("permission denied!")
+        if(Calendar.current.dateComponents([.hour], from: Date()).hour == 1){
+            notf = 0
+        }
+        if(notf == 0){
+            notf = 1
+            let center = UNUserNotificationCenter.current()
+            center.requestAuthorization(options: [.alert,.sound]) { (granted, error) in
+                if(!granted){
+                    print("permission denied!")
+                }
+            }
+            let content = UNMutableNotificationContent()
+            content.title = "Hey!"
+            content.body = "Don't remember to note how do you feel today."
+            var dateComponents = DateComponents()
+            dateComponents.hour = 22
+            dateComponents.minute = 50
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+            let uuidString = UUID().uuidString
+            let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
+            center.add(request) { error in
             }
         }
-        let content = UNMutableNotificationContent()
-        content.title = "Hey!"
-        content.body = "Don't remember to note how do you feel today."
-        var dateComponents = DateComponents()
-        dateComponents.hour = 20
-        dateComponents.minute = 30
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-        center.add(request) { error in
-        }
+        
+        
         if !UserDefaults().bool(forKey: "setup") {
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "count")
