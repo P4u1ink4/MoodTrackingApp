@@ -28,9 +28,9 @@ class ViewController: UIViewController{
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "count")
         }
-        if !UserDefaults().bool(forKey: "notifications"){
+        if !UserDefaults().bool(forKey: "notf"){
             scheduleNotification()
-            UserDefaults().set(true,forKey: "notifications")
+            UserDefaults().set(true,forKey: "notf")
         }
         
 //        let domain = Bundle.main.bundleIdentifier!
@@ -67,7 +67,7 @@ class ViewController: UIViewController{
         var dateComponents = DateComponents()
         dateComponents.hour = 20
         dateComponents.minute = 30
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1440, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
     }
