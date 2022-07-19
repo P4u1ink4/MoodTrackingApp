@@ -25,12 +25,9 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         collectionView.dataSource = self
         if !UserDefaults().bool(forKey: "setup") {
+            scheduleNotification()
             UserDefaults().set(true, forKey: "setup")
             UserDefaults().set(0, forKey: "count")
-        }
-        if !UserDefaults().bool(forKey: "notf"){
-            scheduleNotification()
-            UserDefaults().set(true,forKey: "notf")
         }
         
 //        let domain = Bundle.main.bundleIdentifier!
