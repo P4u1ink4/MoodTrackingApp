@@ -26,7 +26,7 @@ class ViewController: UIViewController{
         super.viewDidLoad()
         collectionView.dataSource = self
         
-        if(Calendar.current.dateComponents([.hour], from: Date()).hour == 20 && Calendar.current.dateComponents([.minute], from: Date()).minute == 30){
+        if(Calendar.current.dateComponents([.hour], from: Date()).hour == 1){
             notf = 0
         }
         if(notf == 0){
